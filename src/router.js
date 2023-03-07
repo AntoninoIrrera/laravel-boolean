@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './pages/HomePage.vue';
 import LibraryList from './pages/LibraryList.vue';
 import AboutUs from './pages/AboutUs.vue';
-// import SingleProject from './pages/SingleProject.vue';
+import SingleBook from './pages/SingleBook.vue';
 
 
 const router = createRouter({
@@ -24,11 +24,11 @@ const router = createRouter({
       name: 'aboutus',
       component: AboutUs
     },
-    // {
-    //   path: '/projects/:slug',
-    //   name: 'singleProject',
-    //   component: SingleProject
-    // },
+    {
+      path: '/library/:id',
+      name: 'singlebook',
+      component: SingleBook
+    },
 
   ]
 });
