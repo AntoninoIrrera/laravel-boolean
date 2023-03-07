@@ -25,10 +25,10 @@ export default {
         <div class="col-6 mb-4" v-for="book in store.bookList">
           <div class="card">
             <div class="card-header">{{ book.author }} / {{ book.publication_date }} ({{ book.price }}&euro;)</div>
-            <img class="card-img-top" :src="book.cover_image" alt="{{ book.title }}">
+            <img class="card-img-top" :src="book.cover_image" :alt="book.title">
             <div class="card-body">
               <h5 class="card-title">{{ book.title }}</h5>
-              <p class="card-text">{{ book.description }}...</p>
+              <p class="card-text">{{ book.description }}</p>
               <router-link :to="{name: 'singlebook', params: {id: book.id}}" class="btn btn-success">Read more...</router-link>
 
             </div>

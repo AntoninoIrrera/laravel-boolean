@@ -13,11 +13,12 @@ export default {
     getBook() {
       axios.get(this.urlAddress + `/api/books/${this.$route.params.id}`, {
         params: {
+
         }
       })
         .then((response) => {
-          console.log(response.data.results.data)
-          this.book = response.data.results.data;
+          console.log(response.data.results)
+          this.book = response.data.results;
         })
         .catch(function (error) {
           console.log(error);
@@ -44,11 +45,11 @@ export default {
       <div class="row d-flex justify-content-center">
         <div class="col-12 mb-4">
           <div class="card">
-            <div class="card-header">{{ book.author }} / {{ book.publication_date }} ({{ book.price }})</div>
-            <img class="card-img-top" :src="book.cover_image" alt="{{ book.title }}">
+            <div class="card-header">{{ book.author }} / {{ book.publication_date }} ({{ book.price }}&euro;)</div>
+            <img class="card-img-top" :src="book.cover_image" :alt="book.title">
             <div class="card-body">
               <h5 class="card-title">{{ book.title }}</h5>
-              <p class="card-text">{{ book.content }}</p>
+              <p class="card-text">{{ book.description }}</p>
 
             </div>
             <div class="card-footer">

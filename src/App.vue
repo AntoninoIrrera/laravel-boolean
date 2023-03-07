@@ -21,7 +21,7 @@ export default {
         }
       })
         .then((response) => {
-          console.log(response.data.results.data)
+          // console.log(response.data.results.data)
           this.store.bookList = response.data.results.data;
         })
         .catch(function (error) {
