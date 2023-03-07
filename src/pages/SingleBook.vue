@@ -45,7 +45,7 @@ export default {
       <div class="row d-flex justify-content-center">
         <div class="col-12 mb-4">
           <div class="card">
-            <div class="card-header">{{ book.author }} / {{ book.publication_date }} ({{ book.price }}&euro;)</div>
+            <div class="card-header">{{ book.author.first_name }} {{ book.author.last_name }}  / {{ book.publication_date }} ({{ book.price }}&euro;)</div>
             <img class="card-img-top" :src="book.cover_image" :alt="book.title">
             <div class="card-body">
               <h5 class="card-title">{{ book.title }}</h5>
@@ -53,7 +53,7 @@ export default {
 
             </div>
             <div class="card-footer">
-              Editor: {{ book.editor }} - - - Genre: {{ book.genre }}
+              Editor: {{ book.editor }} - - - <span v-for="genre in book.genres">#{{ genre.name }}</span>
             </div>
           </div>
         </div>
