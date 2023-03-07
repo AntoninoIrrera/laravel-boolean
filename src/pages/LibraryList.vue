@@ -29,7 +29,8 @@ export default {
             <div class="card-body">
               <h5 class="card-title">{{ book.title }}</h5>
               <p class="card-text">{{ book.description }}</p>
-              <router-link :to="{name: 'singlebook', params: {id: book.id}}" class="btn btn-success">Read more...</router-link>
+              <router-link :to="{ name: 'singlebook', params: { id: book.id } }" class="btn btn-success">Read
+                more...</router-link>
 
             </div>
             <div class="card-footer">
@@ -42,6 +43,4 @@ export default {
   </section>
 </template>
 
-<style lang="scss">
-  
-</style>
+<style lang="scss"></style>
