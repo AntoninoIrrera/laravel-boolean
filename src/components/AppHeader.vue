@@ -14,7 +14,11 @@ export default {
         },
         {
           name: 'About Us',
-          route: 'aboutus'
+          route: 'aboutUs'
+        },
+        {
+          name: 'Contact Us',
+          route: 'contactUs'
         },
       ]
     }
