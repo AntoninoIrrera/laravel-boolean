@@ -1,8 +1,10 @@
 <script>
 import { store } from '../store.js';
+import LibraryListBook from '../components/LibraryListBook.vue';
 
 export default {
   name: 'LibraryList',
+  components: { LibraryListBook },
   data() {
     return {
       store,
@@ -21,28 +23,20 @@ export default {
           </h1>
         </div>
       </div>
-      <div class="row d-flex justify-content-between">
-        <div class="col-6 mb-4" v-for="book in store.bookList">
-          <div class="card">
-            <div class="card-header">{{ book.author.first_name }} {{ book.author.last_name }} / {{ book.publication_date }} ({{ book.price }}&euro;)</div>
-            <img class="card-img-top" :src="book.cover_image" :alt="book.title">
-            <div class="card-body">
-              <h5 class="card-title">{{ book.title }}</h5>
-              <p class="card-text">{{ book.description }}</p>
-              <router-link :to="{ name: 'singlebook', params: { id: book.id } }" class="btn btn-success">Read
-                more...</router-link>
 
-            </div>
-            <div class="card-footer">
-              Editor: {{ book.editor }} - - - <span v-for="genre in book.genres">#{{ genre.name }}</span> 
-            </div>
-          </div>
+      <div class="row d-flex justify-content-between">
+        <!-- Generate Books Cards -->
+        <div class="col-6 mb-4" v-for="book in store.bookList">
+          <!-- Import Card Template -->
+          <LibraryListBook :book="book" />
         </div>
+
       </div>
     </div>
 
-    <div class="d-flex">
 
+    <!-- Navigation -->
+    <div class="d-flex">
       <nav aria-label="Page navigation example" class="m-auto mt-5">
         <ul class="pagination">
           <li class="page-item">
