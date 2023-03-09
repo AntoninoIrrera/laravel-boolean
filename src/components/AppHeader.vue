@@ -5,17 +5,21 @@ export default {
     return {
       links: [
         {
-        name : 'HomePage',
-        route : 'homepage'
-      },
-      {
-        name: 'Library',
-        route : 'library'
-      },
-      {
-        name: 'About Us',
-        route : 'aboutus'
-      },
+          name: 'HomePage',
+          route: 'homepage'
+        },
+        {
+          name: 'Library',
+          route: 'library'
+        },
+        {
+          name: 'About Us',
+          route: 'aboutUs'
+        },
+        {
+          name: 'Contact Us',
+          route: 'contactUs'
+        },
       ]
     }
   },
